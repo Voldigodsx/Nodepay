@@ -1,0 +1,18 @@
+services:
+  nodepay:
+    container_name: Nodepay
+    image: nodepay
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - NP_COOKIE=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjU4MDIyNDIyNDE4ODE3MDI0IiwiaWF0IjoxNzIwMjk1OTYyLCJleHAiOjE3MjE1MDU1NjJ9.yxECNDFAzy8o8qRu3ye6Tb5cD9F01Kc4Wj45VbnVLMJvV7yJaUvW2UedvdHF2ghlFQNsxuNr4hlu2W-nUNNA8g
+      
+      
+      docker build -t nodepay . && \
+docker run -d \
+  --name Nodepay \
+  --restart unless-stopped \
+  -e NP_COOKIE="eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjU4MDIyNDIyNDE4ODE3MDI0IiwiaWF0IjoxNzIwMjk1OTYyLCJleHAiOjE3MjE1MDU1NjJ9.yxECNDFAzy8o8qRu3ye6Tb5cD9F01Kc4Wj45VbnVLMJvV7yJaUvW2UedvdHF2ghlFQNsxuNr4hlu2W-nUNNA8g" \
+  nodepay
